@@ -20,30 +20,34 @@ const Certifications = () => {
     }));
     setStars(generatedStars);
 
-    const certTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".cert-section",
-        start: "top 70%",
-        end: "bottom center",
-        toggleActions: "play none none reverse",
-      },
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+      const certTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".cert-section",
+          start: "top 70%",
+          end: "bottom center",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      certTimeline.fromTo(
+        ".cert-card",
+        { opacity: 0, y: 150, scale: 0.9 },
+        { 
+          opacity: 1, 
+          y: 0, 
+          scale: 1,
+          duration: 1.2, 
+          stagger: 0.2, 
+          ease: "expo.out" 
+        }
+      );
     });
 
-    certTimeline.fromTo(
-      ".cert-card",
-      { opacity: 0, y: 150, scale: 0.9 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        scale: 1,
-        duration: 1.2, 
-        stagger: 0.2, 
-        ease: "expo.out" 
-      }
-    );
-
     return () => {
-      certTimeline.kill();
+      mm.revert();
     };
   }, []);
 
