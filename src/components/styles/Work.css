@@ -156,14 +156,49 @@
   }
 
   .work-box {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: 30px 40px;
+    gap: 30px;
   }
 
   .work-section h2 {
-    font-size: 60px;
-    margin-bottom: 30px;
-    margin-top: 70px;
+    font-size: 50px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+  }
+
+  .project-github-btn {
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (max-height: 750px) {
+  .work-image img {
+    max-height: 180px;
+  }
+
+  .work-box {
+    padding: 20px 30px;
+    gap: 15px;
+  }
+
+  .work-section h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  .work-title h3 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .work-info h4 {
+    font-size: 18px;
+  }
+  
+  .project-github-btn {
+    margin-top: 10px;
+    padding: 8px 20px;
   }
 }
 
@@ -207,18 +242,20 @@
   }
 }
 
-@media only screen and (max-height: 650px) {
+@media only screen and (max-height: 600px) {
   .work-image img {
-    max-height: 200px;
+    max-height: 140px;
   }
 
   .work-section h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
 
   .work-box {
-    gap: 20px;
+    padding: 15px 20px;
+    gap: 10px;
   }
 }
 
