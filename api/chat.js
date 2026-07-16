@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     const apiKey = process.env.GROQ_API_KEY || process.env.VITE_GROQ_API_KEY;
 
     if (!apiKey) {
-        return res.status(500).json({ error: 'Server configuration error: Missing API Key' });
+        return res.status(500).json({ error: `Server configuration error: Missing API Key. Checked GROQ_API_KEY and VITE_GROQ_API_KEY. Found: ${process.env.VITE_GROQ_API_KEY ? 'Yes' : 'No'}` });
     }
 
     try {

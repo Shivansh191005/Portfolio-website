@@ -281,6 +281,10 @@ const Play = () => {
 
       const data = await response.json();
 
+      if (!response.ok) {
+        throw new Error(data.error?.message || data.details || data.error || 'API Request Failed');
+      }
+
       if (data.choices && data.choices[0]?.message?.content) {
         const assistantMessage: ChatMessage = {
           role: 'assistant',
@@ -290,11 +294,11 @@ const Play = () => {
       } else {
         throw new Error('Invalid response');
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Chat error:', error);
       const errorMessage: ChatMessage = {
         role: 'assistant',
-        content: 'Sorry, having some connection issues. Try again? 😅'
+        content: `Error: ${error.message}. Please check your API key and Vercel logs.`
       };
       setChatMessages(prev => [...prev, errorMessage]);
     } finally {
