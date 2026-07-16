@@ -61,7 +61,10 @@ export function setCharTimeline(
     }
   });
   let neckBone = character?.getObjectByName("spine005");
-  if (window.innerWidth > 1024) {
+  
+  let mm = gsap.matchMedia();
+
+  mm.add("(min-width: 1025px)", () => {
     if (character) {
       tl1
         .fromTo(character.rotation, { y: 0 }, { y: 0.7, duration: 1 }, 0)
@@ -118,7 +121,9 @@ export function setCharTimeline(
         .fromTo(".whatIDO", { y: 0 }, { y: "15%", duration: 2 }, 0)
         .to(character.rotation, { x: -0.04, duration: 2, delay: 1 }, 0);
     }
-  } else {
+  });
+
+  mm.add("(max-width: 1024px)", () => {
     if (character) {
       const tM2 = gsap.timeline({
         scrollTrigger: {
@@ -129,7 +134,7 @@ export function setCharTimeline(
       });
       tM2.to(".what-box-in", { display: "flex", duration: 0.1, delay: 0 }, 0);
     }
-  }
+  });
 }
 
 export function setAllTimeline() {
@@ -173,19 +178,23 @@ export function setAllTimeline() {
       0
     );
 
-  if (window.innerWidth > 1024) {
+  let mm = gsap.matchMedia();
+
+  mm.add("(min-width: 1025px)", () => {
     careerTimeline.fromTo(
       ".career-section",
       { y: 0 },
       { y: "20%", duration: 0.5, delay: 0.2 },
       0
     );
-  } else {
+  });
+
+  mm.add("(max-width: 1024px)", () => {
     careerTimeline.fromTo(
       ".career-section",
       { y: 0 },
       { y: 0, duration: 0.5, delay: 0.2 },
       0
     );
-  }
+  });
 }

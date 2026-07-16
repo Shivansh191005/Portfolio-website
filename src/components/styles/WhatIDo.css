@@ -240,3 +240,29 @@
     max-width: 500px;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .what-box-in {
+    width: 100%;
+    height: 600px;
+  }
+  .what-content {
+    padding: 20px;
+  }
+  .what-content h3 {
+    font-size: 22px;
+  }
+  .what-content h4 {
+    font-size: 12px;
+    margin: 5px 0 10px 0;
+  }
+  .what-content p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .what-box h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}

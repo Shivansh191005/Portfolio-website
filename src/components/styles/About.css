@@ -10,10 +10,11 @@
   margin: auto;
 }
 .about-me {
-  padding: 40px 0px;
+  padding: 40px 20px;
   padding-bottom: 0;
   width: 100%;
-  max-width: calc(100% - 15px);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 .about-me h3 {
   font-size: 18px;
@@ -25,11 +26,11 @@
 }
 
 .about-me p {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 26px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
   letter-spacing: 0.5px;
-  word-spacing: 2px;
+  word-spacing: 1px;
 }
 
 .about-me .split-word {

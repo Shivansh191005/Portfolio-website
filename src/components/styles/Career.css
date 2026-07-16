@@ -230,6 +230,11 @@
     left: 0%;
   }
 
+  .career-dot {
+    left: 0%;
+    transform: translate(-3.5px, 50%);
+  }
+
   .career-container {
     width: calc(100% - 25px);
   }
